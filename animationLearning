@@ -1,0 +1,37 @@
+// don't initialize variables in the draw loop they're going to be re?-initialzed
+int x; // declare the variable here (globally) but initialize it in the setup
+boolean xToggle; // can also do this toggle thing to bounce which is more inefficient :'?) it's dumbfbnjdfvs
+boolean yToggle; 
+double xSpeed;
+int y;
+
+// can call setup when it's gameover so everything resets
+void setup() { // don't put methods inside of methods (for now)
+  size(400, 400);
+  x = 60;
+  y = 20;
+  xSpeed = 5;
+  
+}
+
+void draw() {
+  // habit: do your game state changes (the math) before all your graphic stuff
+ x += xSpeed;
+ y += xSpeed;
+  
+  if (x >= 400) {
+    xSpeed = -xSpeed;
+  } else if (x <= 40) {
+    xSpeed = -xSpeed;
+  }              // update variable
+     
+  background(255);
+  
+  // draw ball
+  noStroke();
+  fill(255, 165, 1);
+  ellipse(x, 200, 50, 50);  // use variable to draw
+  
+  fill(255, 130, 2);
+  ellipse(width/2, y, 50, 50);
+}
