@@ -1,0 +1,31 @@
+void setup() {
+  size(400, 400);
+  
+  background(255);
+  noStroke();
+  
+  // face
+  fill(183, 204, 152);
+  ellipse(width/2, height/2, 220, 250);
+  
+  // left eye
+  fill(255);
+  ellipse(width/2-40, height/2-50, 40, 50);
+  fill(148, 182, 152);
+  ellipse(width/2-35, height/2-40, 25, 25);
+  
+  // right eye
+  fill(255);
+  ellipse(width/2+40, height/2-50, 40, 50);
+  fill(148, 182, 152);
+  ellipse(width/2+45, height/2-40, 25, 25);
+  
+  // mouth
+  fill(7, 46, 21);
+  ellipse(width/2 + 10, height/2 + 50, 50, 60);
+  
+  fill(90, 20, 20);
+  for (int x = 30; x < 50 + 45*7; x += 45) {
+    rect(x, 20, 30, 30);
+  }
+}
