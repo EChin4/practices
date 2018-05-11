@@ -1,0 +1,39 @@
+// 1. Make something move
+// 2. Make it bounce
+
+int x, y, xSpeed, ySpeed;        // declare globally
+float BallSize; 
+
+void setup () {
+  size(400, 400);
+  
+  // xBall values
+  x = width/2;        // initialize variable
+  xSpeed = 12;
+  BallSize = 55;
+  
+  y = height/2;
+  ySpeed = 2;
+}
+
+void draw () {
+  x += xSpeed;        // update variable
+  y += ySpeed;
+  
+  // x boundary check
+  if (x + BallSize/2 >= width || x - BallSize/2 <= 0) {
+    xSpeed = -xSpeed;
+  }
+  
+  // y boundary check
+  if (y + BallSize/2 >= height || y - BallSize/2 <= 0) {
+    ySpeed = -ySpeed;
+  }
+  
+  background(255);
+  
+  // draw x-bouncing circle
+  noStroke();
+  fill(#BAF2BB);
+  ellipse(x, y, BallSize, BallSize);        // use variable to draw
+}
