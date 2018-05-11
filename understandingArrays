@@ -1,0 +1,9 @@
+size(800, 800);
+
+int[] xLoc = new int[5];
+for (int i = 0; i < xLoc.length; i ++) { // index value increases by 1 each time
+  xLoc[i] = (i + 1) * 100;
+  ellipse(xLoc[i], height/2, 100, 100);
+}
+
+println(xLoc);
