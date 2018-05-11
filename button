@@ -1,0 +1,25 @@
+int buttonColour;
+
+void setup() {
+  size(600, 600);
+  buttonColour = color(255, 0, 0);
+}
+
+void draw() {
+  fill(buttonColour);
+  ellipse(width/2, height/2, width/3, height/3);
+}
+
+// difference between mouseClicked and mousePressed?
+// click (up down motion) will run until you release the button
+// pressed runs the code immediately as soon as you click
+
+void mousePressed() {
+  if (mouseX <= width/2 + width/6 && mouseX >= width/2 - width/6 && mouseY <= height/2 + height/6 && mouseY >= height/2 - height/6) {  
+    buttonColour = color(20, 100, 70); // lol but the corners tho
+  } // use pythagorean stuff
+}
+
+void mouseReleased() {
+  buttonColour = color(255, 0, 0);
+}
