@@ -1,0 +1,27 @@
+int flowerX;
+PVector flowerSpeed, flowerLoc;
+
+void setup() {
+  size(800, 800);
+  flowerX = 10;
+}
+
+void drawFlower(int flowerX, int flowerY) {
+  pushMatrix();
+    translate(flowerX, flowerY);
+    fill(225);    
+    for (int i = 0; i < 5; i++) {
+      translate(15, 10);
+      rotate(PI*2/5);
+      ellipse(0, 0, 20, 30);
+    }
+  popMatrix();
+}
+
+void draw() {
+  flowerX += 1;
+  
+  background(0, 0, 0);
+  drawFlower(flowerX, 400);
+  drawFlower(200, 200);
+}
