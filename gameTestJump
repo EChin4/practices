@@ -1,0 +1,51 @@
+int x, y, xGround, yGround, boxSize;
+float jumpSpeed, gravity;
+
+void setup() {
+  size(700, 500);
+  xGround = 0;
+  yGround = 400;
+  boxSize = 50;
+  x = 200;
+  y = yGround - boxSize;
+ 
+  jumpSpeed = 5.5;
+  gravity = 0.5;
+}
+
+void jump() {
+  y -= jumpSpeed;
+  jumpSpeed -= gravity;
+}
+
+void draw() {
+  // With the keyPressed, it'll trigger if the key is being held down. 
+  // w/o it, it'll just move right forever
+  // need keyCode for RIGHT, LEFT, UP, DOWN, ALT, CONTROL, SHIFT ?
+  // need key for ENTER, BACKSPACE, TAB, RETURN, ESC, DELETE
+  // or wait u can just println(keyCode); and see for urself what it is. same as javascript keycodes?
+  if (keyPressed) {
+    if (keyCode == 39) {
+      x += 1;
+    }
+  } 
+  
+  if (keyCode == 32) {
+    jump();
+  }
+  
+  if (y > yGround - boxSize) {
+    y = yGround - boxSize;
+  }
+  
+  background(255);
+  
+  fill(30, 110, 80);
+  rect(xGround, yGround, width, height/2);
+  
+  fill(#ffcece);
+  rect(x, y, boxSize, boxSize);
+}
+
+
+
