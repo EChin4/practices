@@ -1,3 +1,5 @@
+// https://forum.processing.org/one/topic/shoot-multiple-bullets.html
+
 ArrayList <Bullet> bullets = new ArrayList <Bullet> ();
 PVector player, playerSpeed;
 float maxSpeed = 3;
